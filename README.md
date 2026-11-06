@@ -15,23 +15,7 @@ I built and secured my home network from scratch with **Sophos Firewall (free Ho
 
 ## Architecture
 
-```mermaid
-flowchart TB
-    Internet([Internet]) --- WAN
-    subgraph FW["Sophos Firewall"]
-        WAN["WAN zone"]
-        LAN["LAN zone"]
-        GUEST["Guest VLAN<br/>separate subnet"]
-        VPN["SSL VPN<br/>Sophos Connect"]
-    end
-    Remote([Remote device]) -. "encrypted tunnel" .-> VPN
-    LAN --> Mine["My devices<br/>PC, laptop, phone"]
-    LAN --> Fam["Family member's devices"]
-    LAN --> Xbox["Xbox consoles"]
-    LAN --> Media["Media streaming boxes"]
-    LAN --> Other["Other DHCP devices"]
-    GUEST --> Guests["Guest Wi-Fi devices<br/>shared 10 Mbps"]
-```
+![Diagram](diagrams/diagram-1.png)
 
 ## Firewall rule design
 
